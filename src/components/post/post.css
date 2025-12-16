@@ -1,0 +1,50 @@
+.post-container {
+  border: 1px solid blueviolet;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.author-img {
+  border-radius: 50%;
+}
+
+/* TODO make it re-usable css */
+.post-edit-btn,
+.post-delete-btn {
+  all: unset;
+  border: 1px solid blueviolet;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.post-edit-btn:hover,
+.post-delete-btn:hover {
+  color: white;
+  background-color: blueviolet;
+}
+
+.post-date {
+  margin: unset;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 32px;
+}
+
+.post-content {
+  margin-top: 8px;
+  line-height: 1.5;
+}
