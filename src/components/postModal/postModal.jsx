@@ -3,8 +3,12 @@ import DialogTitle from "@mui/material/DialogTitle";
 import TextField from "@mui/material/TextField";
 
 import "./postModal.css";
+import { useState } from "react";
 
-function PostModal({ isOpen, handleClose }) {
+function PostModal({ isOpen, handleClose, action, data }) {
+  const [title, setTitle] = useState(data?.title);
+  const [content, setContent] = useState(data?.content);
+
   return (
     <Dialog open={isOpen} onClose={handleClose} fullWidth>
       <div className="post-modal">
@@ -13,12 +17,19 @@ function PostModal({ isOpen, handleClose }) {
             paddingLeft: 0,
           }}
         >
-          Create Post
+          {action === "create" ? "Create" : "Update"} Post
         </DialogTitle>
 
         <div>
           <div className="input-container">
-            <TextField fullWidth label="Title" />
+            <TextField
+              fullWidth
+              label="Title"
+              value={title}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
+            />
           </div>
 
           <div className="input-container">
@@ -29,13 +40,17 @@ function PostModal({ isOpen, handleClose }) {
               multiline
               minRows={4}
               maxRows={8}
+              value={content}
+              onChange={(e) => {
+                setContent(e.target.value);
+              }}
             />
           </div>
         </div>
 
         <div className="post-modal-cta-container">
           <button onClick={handleClose} className="post-modal-submit-btn">
-            Submit
+            {action === "create" ? "Submit" : "Update"}
           </button>
           <button onClick={handleClose} className="post-modal-cancel-btn">
             Cancel

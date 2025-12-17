@@ -45,6 +45,13 @@
 }
 
 .post-content {
-  margin-top: 8px;
   line-height: 1.5;
+}
+
+.post-title {
+  margin: unset;
+  padding: 16px 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  font-style: italic;
 }
