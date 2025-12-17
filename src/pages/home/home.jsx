@@ -6,8 +6,13 @@ import PostModal from "../../components/postModal/postModal";
 function Home() {
   const [isOpen, setOpen] = useState(false);
 
-  const handleOpen = () => setOpen(true);
+  const handleOpen = (modalAction) => {
+    setAction(modalAction);
+    setOpen(true);
+  };
+
   const handleClose = () => setOpen(false);
+  const [action, setAction] = useState();
 
   return (
     <>
@@ -17,7 +22,10 @@ function Home() {
           <div className="title-wrapper">
             <div className="title-container">
               <h4 className="title">Happies!!!</h4>
-              <button onClick={handleOpen} className="create-post-btn">
+              <button
+                onClick={() => handleOpen("create")}
+                className="create-post-btn"
+              >
                 Create Post
               </button>
             </div>
@@ -35,7 +43,7 @@ function Home() {
         </div>
       </div>
 
-      <PostModal isOpen={isOpen} handleClose={handleClose} />
+      <PostModal isOpen={isOpen} handleClose={handleClose} action={action} />
     </>
   );
 }
