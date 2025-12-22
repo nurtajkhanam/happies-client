@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./post.css";
 import PostModal from "../postModal/postModal";
+import DeleteModal from "../postModal/deleteModal";
 
 function Post() {
   const [isOpen, setOpen] = useState(false);
@@ -27,6 +28,10 @@ function Post() {
           Quos, beatae?`,
   };
 
+  const [isAlert, setAlert] = useState(false);
+  const openAlert = () => setAlert(true);
+  const handleCloseAlert = () => setAlert(false);
+
   return (
     <>
       <div className="post-container">
@@ -47,7 +52,9 @@ function Post() {
             >
               Edit
             </button>
-            <button className="post-delete-btn">Delete</button>
+            <button onClick={openAlert} className="post-delete-btn">
+              Delete
+            </button>
           </div>
         </div>
 
@@ -70,6 +77,7 @@ function Post() {
         action={action}
         data={data}
       />
+      <DeleteModal isAlert={isAlert} handleCloseAlert={handleCloseAlert} />
     </>
   );
 }
