@@ -1,7 +1,7 @@
 .alert-box {
   margin: 24px;
 }
-.alert-ques {
+.alert-title {
   padding-bottom: 16px;
   font-size: 22px;
   font-weight: 700;
@@ -13,8 +13,7 @@
   margin: 24px;
 }
 
-.yes-btn,
-.no-btn {
+.cta-btn {
   all: unset;
   margin-right: 8px;
   padding: 6px 12px;
@@ -24,11 +23,7 @@
   font-weight: 700;
   cursor: pointer;
 }
-.yes-btn:hover {
-  color: white;
-  background-color: blueviolet;
-}
-.no-btn:hover {
+.cta-btn:hover {
   color: white;
   background-color: blueviolet;
 }

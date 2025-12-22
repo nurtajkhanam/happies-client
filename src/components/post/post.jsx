@@ -30,7 +30,7 @@ function Post() {
 
   const [isAlert, setAlert] = useState(false);
   const openAlert = () => setAlert(true);
-  const closeAlert = () => setAlert(false);
+  const handleCloseAlert = () => setAlert(false);
 
   return (
     <>
@@ -77,7 +77,7 @@ function Post() {
         action={action}
         data={data}
       />
-      <DeleteModal isAlert={isAlert} closeAlert={closeAlert} />
+      <DeleteModal isAlert={isAlert} handleCloseAlert={handleCloseAlert} />
     </>
   );
 }
